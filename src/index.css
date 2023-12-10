@@ -2,48 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components {
-  .input {
-    @apply rounded-full border border-stone-200 px-4 py-2 text-sm transition-all duration-300 placeholder:text-stone-400 focus:outline-none focus:ring focus:ring-yellow-400 md:px-6 md:py-3;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  /* https://dev.to/afif/i-made-100-css-loaders-for-your-next-project-4eje */
-  .loader {
-    width: 45px;
-    aspect-ratio: 0.75;
-    --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
-    background:
-      var(--c) 0% 50%,
-      var(--c) 50% 50%,
-      var(--c) 100% 50%;
-    background-size: 20% 50%;
-    animation: loading 1s infinite linear;
-  }
+body {
+  display: flex;
+  position: relative;
 
-  @keyframes loading {
-    20% {
-      background-position:
-        0% 0%,
-        50% 50%,
-        100% 50%;
-    }
-    40% {
-      background-position:
-        0% 100%,
-        50% 0%,
-        100% 50%;
-    }
-    60% {
-      background-position:
-        0% 50%,
-        50% 100%,
-        100% 0%;
-    }
-    80% {
-      background-position:
-        0% 50%,
-        50% 50%,
-        100% 100%;
-    }
-  }
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: aqua; */
+}
+
+#wrapper {
+  position: absolute;
+  top: 50%; /* Move the box down by 50% of the screen */
+  left: 50%; /* Move the box to the right by 50% of the screen */
+  transform: translate(-50%, -50%); /* Center the box precisely */
 }
